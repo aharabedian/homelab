@@ -1,0 +1,14 @@
+- name: Install packages for automatic upgrade
+  ansible.builtin.apt:
+    name:
+      - unattended-upgrades
+  become: true
+
+- name: Copy APT auto-upgrades configuration
+  ansible.builtin.copy:
+    src: auto-upgrades
+    dest: /etc/apt/apt.conf.d/20auto-upgrades
+    owner: root
+    group: root
+    mode: 0644
+  become: true

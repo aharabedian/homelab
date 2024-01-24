@@ -1,0 +1,7 @@
+set timeout=1
+
+menuentry '{{ netboot_url | basename }} (PXE)' {
+    set background_color=black
+    linux    /debian-installer/amd64/linux auto=true url=tftp://{{ ansible_default_ipv4.address }}/preseed/${net_default_mac}.cfg debian-installer/locale={{ locale }} debian-installer/country={{ country }} debian-installer/language={{ language }} keyboard-configuration/xkb-keymap={{ keymap }} netcfg/get_hostname=k3s-netbooting netcfg/get_domain=local.domain --- quiet
+    initrd   /debian-installer/amd64/initrd.gz
+}

@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  dnsmasq:
+    build: ./dnsmasq
+    volumes:
+      - ./data/pxe-config/dnsmasq.conf:/etc/dnsmasq.conf
+      - ./data/pxe-config/grub.cfg:/tftp/debian-installer/amd64/grub/grub.cfg
+      - ./data/netboot/debian-installer/amd64/grubx64.efi:/tftp/grubx64.efi
+      - ./data/netboot/debian-installer:/tftp/debian-installer
+      - ./data/init-config:/tftp/preseed
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
