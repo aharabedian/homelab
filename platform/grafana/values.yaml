@@ -20,32 +20,32 @@ grafana:
   envFromSecret: grafana-secrets
   grafana.ini:
     server:
-      root_url: https://grafana.khuedoan.com
-    auth.generic_oauth:
-      enabled: true
-      allow_sign_up: true
-      name: Dex
-      client_id: grafana-sso
-      client_secret: $__env{GRAFANA_SSO_CLIENT_SECRET}
-      scopes: openid profile email groups
-      auth_url: https://dex.khuedoan.com/auth
-      token_url: https://dex.khuedoan.com/token
-      api_url: https://dex.khuedoan.com/userinfo
-  alerting:
-    contactpoints.yaml:
-      secret:
-        contactPoints:
-          - name: ntfy
-            receivers:
-              - uid: ntfy-relay
-                type: webhook
-                settings:
-                  url: http://ntfy-relay.ntfy-relay
-                  username: admin
-                  password: $__env{NTFY_RELAY_PASSWORD}
-    policies.yaml:
-      policies:
-        - receiver: ntfy
-          group_by:
-            - grafana_folder
-            - alertname
+      root_url: https://grafana.aharabedian.com
+  #   auth.generic_oauth:
+  #     enabled: true
+  #     allow_sign_up: true
+  #     name: Dex
+  #     client_id: grafana-sso
+  #     client_secret: $__env{GRAFANA_SSO_CLIENT_SECRET}
+  #     scopes: openid profile email groups
+  #     auth_url: https://dex.aharabedian.com/auth
+  #     token_url: https://dex.aharabedian.com/token
+  #     api_url: https://dex.aharabedian.com/userinfo
+  # alerting:
+  #   contactpoints.yaml:
+  #     secret:
+  #       contactPoints:
+  #         - name: ntfy
+  #           receivers:
+  #             - uid: ntfy-relay
+  #               type: webhook
+  #               settings:
+  #                 url: http://ntfy-relay.ntfy-relay
+  #                 username: admin
+  #                 password: $__env{NTFY_RELAY_PASSWORD}
+  #   policies.yaml:
+  #     policies:
+  #       - receiver: ntfy
+  #         group_by:
+  #           - grafana_folder
+  #           - alertname
