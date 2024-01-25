@@ -7,10 +7,6 @@
 organizations:
   - name: ops
     description: Operations
-    teams:
-      - name: Owners
-        members:
-          - renovate
 repositories:
   - name: homelab
     owner: ops
