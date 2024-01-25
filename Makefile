@@ -5,7 +5,7 @@
 KUBECONFIG = $(shell pwd)/metal/kubeconfig.yaml
 KUBE_CONFIG_PATH = $(KUBECONFIG)
 
-default: metal bootstrap external smoke-test post-install clean
+default: metal bootstrap external clean
 
 configure:
 	./scripts/configure
@@ -46,7 +46,7 @@ test:
 	make -C test
 
 clean:
-	docker compose --project-directory ./metal/roles/pxe_server/files down
+	docker compose --project-directory ./metal/roles/pxe/files down
 
 dev:
 	make -C metal cluster env=dev

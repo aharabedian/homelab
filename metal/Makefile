@@ -16,7 +16,7 @@ boot: ~/.ssh/id_ed25519
 cluster:
 	ansible-playbook \
 		--inventory inventories/${env}.yml \
-		k3s-cluster.yml -vvv
+		k3s-cluster.yml
 
 console:
 	ansible-console \
