@@ -1,0 +1,16 @@
+- hosts: localhost
+  name: Apply namespaces
+  vars:
+    ansible_python_interpreter: /home/aharabedian/.ansible/.venv/bin/python
+  tasks:
+    - name: Ensure required namespaces exist
+      kubernetes.core.k8s:
+        api_version: v1
+        kind: Namespace
+        name: "{{ item }}"
+        state: present
+      loop:
+        - cert-manager
+        - cloudflared
+        - external-dns
+        - global-secrets
