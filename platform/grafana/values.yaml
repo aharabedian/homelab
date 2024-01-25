@@ -5,7 +5,7 @@ grafana:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
     hosts:
-      - &host grafana.khuedoan.com
+      - &host grafana.aharabedian.com
     tls:
       - secretName: grafana-general-tls
         hosts:
