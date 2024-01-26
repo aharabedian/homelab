@@ -1,0 +1,7 @@
+kured:
+  configuration:
+    annotateNodes: true
+    timeZone: America/New_York
+    startTime: 5pm
+    endTime: 7pm
+    period: 0h30m0s
