@@ -1,24 +1,18 @@
 home-assistant:
   ingress:
     enabled: true
-    className: nginx
-    hosts:
-      - &host hass.aharabedian.com
+    ingressClassName: nginx
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    hosts:
+      - &host hass.aharabedian.com
     tls:
-      - secretName: home-assistant-tls-certificate
+      - secretName: home-assistant-tls
         hosts:
           - *host
   persistence:
     enabled: true
     size: 10Gi
-  garbageCollect:
-    enabled: true
-  metrics:
-    enabled: true
   addons:
     codeserver:
       enabled: true
