@@ -3,7 +3,7 @@ name: home-assistant
 version: 0.0.0
 dependencies:
   - name: home-assistant
-    version: 14.0.1
-    repository: https://k8s-home-lab.github.io/helm-charts/
+    version: 0.2.31
+    repository: http://pajikos.github.io/home-assistant-helm-chart/
 
 
