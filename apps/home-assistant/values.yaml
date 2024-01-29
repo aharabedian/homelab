@@ -5,7 +5,7 @@ home-assistant:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
     hosts:
-      - &host hass.aharabedian.com
+      - host: &host hass.aharabedian.com
     tls:
       - secretName: home-assistant-tls
         hosts:
