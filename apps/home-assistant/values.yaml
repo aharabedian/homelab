@@ -9,10 +9,10 @@ home-assistant:
         paths:
           - path: /
             pathType: Prefix
-    tls:
-      - secretName: home-assistant-tls
-        hosts:
-          - *host
+    # tls:
+    #   - secretName: home-assistant-tls
+    #     hosts:
+    #       - *host
   persistence:
     enabled: true
     size: 10Gi
