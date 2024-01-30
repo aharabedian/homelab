@@ -16,14 +16,14 @@ home-assistant:
   persistence:
     enabled: true
     size: 10Gi
-  addons:
-    codeserver:
-      enabled: true
-      args:
-        - --auth
-        - none
-        - --user-data-dir
-        - /data/config/.vscode
-      volumeMounts:
-      - name: config
-        mountPath: /data/config
+  # addons:
+  #   codeserver:
+  #     enabled: true
+  #     args:
+  #       - --auth
+  #       - none
+  #       - --user-data-dir
+  #       - /data/config/.vscode
+  #     volumeMounts:
+  #     - name: config
+  #       mountPath: /data/config
