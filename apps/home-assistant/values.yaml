@@ -13,6 +13,13 @@ home-assistant:
     #   - secretName: home-assistant-tls
     #     hosts:
     #       - *host
+  additionalMounts:
+    - name: config-volume
+      mountPath: /config
+  additionalVolumes:
+    - name: config-volume
+      configMap:
+        name: hass-configmap
   persistence:
     enabled: true
     size: 10Gi

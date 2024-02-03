@@ -1,0 +1,13 @@
+apiVersion: 1
+kind: ConfigMap
+metadata:
+  name: hass-configmap
+data:
+  configuration.yaml: |
+    name: {{ include "home-assistant.fullname" . }}
+    use_x_forwarded_for: True
+    trusted_proxies:
+      - 127.0.0.1
+      - <proxy ip>
+    trusted_networks:
+      - 192.168.1.0/24
