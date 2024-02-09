@@ -1,6 +1,6 @@
 home-assistant:
   service:
-    type: LoadBalancer
+    type: NodePort
   # ingress:
   #   enabled: true
   #   className: nginx
