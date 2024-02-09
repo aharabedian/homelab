@@ -15,7 +15,7 @@ home-assistant:
     #       - *host
   additionalMounts:
     - name: config-volume
-      mountPath: /config
+      mountPath: /reverse-proxy.yaml
   additionalVolumes:
     - name: config-volume
       configMap:
