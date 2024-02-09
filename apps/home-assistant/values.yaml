@@ -1,4 +1,6 @@
 home-assistant:
+  service:
+    type: LoadBalancer
   # ingress:
   #   enabled: true
   #   className: nginx
