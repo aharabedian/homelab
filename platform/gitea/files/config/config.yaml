@@ -13,4 +13,4 @@ repositories:
     private: false
     migrate:
       source: https://github.com/aharabedian/homelab
-      mirror: true
+      mirror: false
