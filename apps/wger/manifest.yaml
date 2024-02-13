@@ -8,9 +8,6 @@ spec:
     repoURL: https://git.aharabedian.com/aharabedian/wger-deployment.git
     targetRevision: HEAD
     path: manifest
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: wger
   syncPolicy:
     automated:
       prune: true
