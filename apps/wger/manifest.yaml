@@ -9,11 +9,5 @@ spec:
     targetRevision: HEAD
     path: manifest
   destination:
-    server: in-cluster
+    server: https://kubernetes.default.svc
     namespace: wger
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - Validate=false
