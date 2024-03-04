@@ -9,5 +9,6 @@ metal:
       hosts:
         metal0: {ansible_host: 192.168.1.110, mac: 'e4:b9:7a:ef:8a:7d', network_interface: eth1}
         metal1: {ansible_host: 192.168.1.111, mac: '00:4e:01:aa:d2:a1', network_interface: eth1}
+        metal2: {ansible_host: 192.168.1.112, mac: '6c:2b:59:d2:17:be', network_interface: eth1}
     workers:
       hosts:
