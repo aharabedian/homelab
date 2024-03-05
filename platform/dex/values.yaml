@@ -1,0 +1,37 @@
+dex:
+  config:
+    issuer: https://dex.aharabedian.com
+    storage:
+      type: kubernetes
+      config:
+        inCluster: true
+    oauth2:
+      skipApprovalScreen: true
+    staticClients:
+      - id: grafana-sso
+        name: Grafana
+        redirectURIs:
+          - 'https://grafana.aharabedian.com/login/generic_oauth'
+        secretEnv: GRAFANA_SSO_CLIENT_SECRET
+      - id: gitea
+        name: Gitea
+        redirectURIs:
+          - 'https://git.aharabedian.com/user/oauth2/Dex/callback'
+        secretEnv: GITEA_CLIENT_SECRET
+  envFrom:
+    - secretRef:
+        name: dex-secrets
+  ingress:
+    enabled: true
+    className: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+    hosts:
+      - host: &host dex.aharabedian.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - secretName: dex-tls-certificate
+        hosts:
+          - *host
